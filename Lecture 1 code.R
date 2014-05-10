@@ -43,7 +43,8 @@ yval<- dt(xval, 15)
 plot(xval, yval, type = "l", axes = TRUE, frame = FALSE, lwd = 3, xlab = "", ylab = "")
 x <- seq(.8, 4, length = 100)
 polygon(c(x, rev(x)),c(dt(x, 15), rep(0, length(x))), col = "salmon")
-text(mean(x), mean(dt(x, 15))+.02, "22%", cex = 2)
+library('scales')
+text(mean(x), mean(dt(x, 15))+.02, percent(round(pt(.8, 15, lower.tail=FALSE), digits=2)), cex = 2)
 text(0.8, .01, "0.8", cex = 2)
 
 
